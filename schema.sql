@@ -19,3 +19,7 @@ INSERT INTO burgers (burger_name) VALUES ('Crying Johnny');
 INSERT INTO burgers (burger_name) VALUES ('All-Bun Patty');
 INSERT INTO burgers (burger_name) VALUES ('Krusty Dog');
 INSERT INTO burgers (burger_name) VALUES ('Flabby Patty');
+
+-- UPDATE programming_languages 
+-- SET devpured = false,
+-- WHERE id = ?;
