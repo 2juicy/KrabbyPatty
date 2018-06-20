@@ -1,9 +1,7 @@
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const orm = require("./config/orm.js");
-
-const app = express();
-
 const PORT = process.env.PORT || 3000;
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -17,15 +15,15 @@ app.use(bodyParser.json());
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 const routes = require("./controllers/burgers_controllers.js");
-
 app.use(routes);
- 
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
+
 // require("./app/routing/apiRoutes.js")(app);
 // require("./app/routing/htmlRoutes.js")(app);
 // Find all the pets ordering by the lowest price to the highest price.
@@ -36,5 +34,3 @@ app.use(routes);
 
 // Find the buyer with the most pets.
 // orm.findWhoHasMost("buyer_name", "buyer_id", "buyers", "pets");
-
-app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));

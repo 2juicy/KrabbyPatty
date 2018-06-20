@@ -7,33 +7,32 @@ const connection = require("./connection.js");
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
 const orm = {
-  selectAll: (tableInput, colToSearch, valOfCol) => {
-    let queryString = "SELECT * FROM ?? WHERE ?? = ?";
-    connection.query(queryString, [tableInput, colToSearch, valOfCol], function(err, result) {
+  //this will grab all information from database
+  selectAll: () => {
+    connection.query("SELECT * FROM burgers", (err, res) => {
       if (err) throw err;
-      console.log(result);
+      console.log(res);
     });
   },
-  insertOne: (whatToSelect, table, orderCol) => {
-    let queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
-    console.log(queryString);
-    connection.query(queryString, [whatToSelect, table, orderCol], function(err, result) {
-      if (err) throw err;
-      console.log(result);
-    });
-  },
-  findWhoHasMost: (tableOneCol, tableTwoForeignKey, tableOne, tableTwo) => {
-    let queryString =
-      "SELECT ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1";
-
+  //this will allow you to add more burgers to the database
+  insertOne: (burgerName) => {
     connection.query(
-      queryString,
-      [tableOneCol, tableOneCol, tableOne, tableTwo, tableTwo, tableTwoForeignKey, tableOne, tableOneCol],
-      function(err, result) {
+        "INSERT INTO burgers SET ?",
+        {
+          burger_name: burgerName,
+          devoured: false
+        }, (err, res) => {
         if (err) throw err;
-        console.log(result);
-      }
-    );
+        console.log(res);
+        });
+  },
+  //this will allow you to devour a burger by ID.
+  updateOne: (burgerID) => {
+    let queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
+    connection.query(queryString, [burgerID], (err, res) => {
+        if (err) throw err;
+        console.log(res);
+      });
   }
 };
 
