@@ -2,7 +2,7 @@
 
 
 ### Deployed on Heroku!
-Coming Soon...
+https://eatkrabbypatty.herokuapp.com/
 
 ### NPM Packages
 * [express](https://www.npmjs.com/package/express)
