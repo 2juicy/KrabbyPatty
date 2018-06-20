@@ -6,7 +6,7 @@
   {{#each burgers}}
   {{#unless devoured}}
   <li>
-    <div>{{burger_name}}</div>
+    <div>{{id}}. {{burger_name}}</div>
   </li>
   {{/unless}}
   {{/each}}
@@ -18,13 +18,13 @@
   {{#each burgers}}
   {{#if devoured}}
   <li>
-    <div>{{burger_name}}</div>
+    <div>{{id}}. {{burger_name}}</div>
   </li>
   {{/if}}
   {{/each}}
 </ul>
 
-<h2>Create your own Krabby Patty recipe!</h2>
+<h2>Create your own Krabby Patty!</h2>
 <form class="create-form">
 
   <div class="form-group">
