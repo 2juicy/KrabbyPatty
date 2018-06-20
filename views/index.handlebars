@@ -3,7 +3,7 @@
 <h2>Krabby Patties that are not eaten!</h2>
 
 <ul>
-  {{#each burger}}
+  {{#each burgers}}
   <li>
     {{#unless devoured}}
       <div>{{burger_name}}</div>
@@ -15,7 +15,7 @@
 <h2>Krabby Patties that are devoured!</h2>
 
 <ul>
-  {{#each burger}}
+  {{#each burgers}}
   <li>
     {{#if devoured}}
       <div>{{burger_name}}</div>
