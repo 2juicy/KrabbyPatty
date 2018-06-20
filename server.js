@@ -23,14 +23,3 @@ const routes = require("./controllers/burgers_controllers.js");
 app.use(routes);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
-
-// require("./app/routing/apiRoutes.js")(app);
-// require("./app/routing/htmlRoutes.js")(app);
-// Find all the pets ordering by the lowest price to the highest price.
-// orm.selectAndOrder("animal_name", "pets", "price");
-
-// Find a pet in the pets table by an animal_name of Rachel.
-// orm.selectWhere("pets", "animal_name", "Rachel");
-
-// Find the buyer with the most pets.
-// orm.findWhoHasMost("buyer_name", "buyer_id", "buyers", "pets");
