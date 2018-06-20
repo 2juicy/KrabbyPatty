@@ -8,14 +8,15 @@ const connection = require("./connection.js");
 // https://en.wikipedia.org/wiki/SQL_injection
 const orm = {
   //this will grab all information from database
-  selectAll: () => {
+  selectAll: (cb) => {
     connection.query("SELECT * FROM burgers", (err, res) => {
       if (err) throw err;
       console.log(res);
+      cb(res);
     });
   },
   //this will allow you to add more burgers to the database
-  insertOne: (burgerName) => {
+  insertOne: (burgerName, cb) => {
     connection.query(
         "INSERT INTO burgers SET ?",
         {
@@ -24,14 +25,16 @@ const orm = {
         }, (err, res) => {
         if (err) throw err;
         console.log(res);
+        cb(res);
         });
   },
   //this will allow you to devour a burger by ID.
-  updateOne: (burgerID) => {
+  updateOne: (burgerID, cb) => {
     let queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
     connection.query(queryString, [burgerID], (err, res) => {
         if (err) throw err;
         console.log(res);
+        cb(res);
       });
   }
 };

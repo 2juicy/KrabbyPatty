@@ -3,21 +3,24 @@
 <h2>Krabby Patties that are not eaten!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
+  <li>
     {{#unless devoured}}
-      {{> burgers/burgers-block devoured=true}}
+      <div>{{burger_name}}</div>
     {{/unless}}
-  {{/each}}
+    </li>
   {{/each}}
 </ul>
 
 <h2>Krabby Patties that are devoured!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
+  <li>
     {{#if devoured}}
-      {{> burgers/burgers-block devoured=false}}
+      <div>{{burger_name}}</div>
     {{/if}}
+    </li>
   {{/each}}
 </ul>
 
