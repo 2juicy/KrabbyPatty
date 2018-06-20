@@ -31,7 +31,7 @@ const orm = {
   //this will allow you to devour a burger by ID.
   updateOne: (burgerID, cb) => {
     let queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
-    connection.query(queryString, [burgerID], (err, res) => {
+    connection.query(queryString, burgerID, (err, res) => {
         if (err) throw err;
         console.log(res);
         cb(res);
