@@ -6,7 +6,7 @@
   {{#each burgers}}
   {{#unless devoured}}
   <li>{{id}}. {{burger_name}}</li>
-  <button class="changeEaten" data-id="{{id}}" data="{{devoured}}">Devour Krabby Patty</button>
+  <button href="/devour/{{id}}" class="changeEaten">Devour Krabby Patty</button>
   {{/unless}}
   {{/each}}
 </ul>
@@ -29,5 +29,5 @@
     <input type="text" id="burg" name="name">
   </div>
 
-  <button type="submit">Add Krabby Patty</button>
+  <button href="/add" type="submit">Add Krabby Patty</button>
 </form>
