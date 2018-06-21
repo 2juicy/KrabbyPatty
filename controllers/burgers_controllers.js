@@ -15,7 +15,6 @@ router.post("/add", (req, res) => {
   console.log(req.body.name);
   burger.insertOne(req.body.name, (data) => {
     console.log(data);
-    res.redirect("/");
   });
 });
 
@@ -30,7 +29,6 @@ router.put("/devour/:id", (req, res) => {
     } else {
       res.status(200).end();
     }
-    res.redirect("/");
   });
 });
 module.exports = router;

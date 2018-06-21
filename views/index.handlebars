@@ -6,7 +6,7 @@
   {{#each burgers}}
   {{#unless devoured}}
   <li>{{id}}. {{burger_name}}</li>
-  <button href="/devour/{{id}}" class="changeEaten">Devour Krabby Patty</button>
+  <button data-id="{{id}}" class="changeEaten">Devour Krabby Patty</button>
   {{/unless}}
   {{/each}}
 </ul>
