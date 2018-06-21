@@ -5,16 +5,17 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 router.get("/", (req, res) => {
-  burger.selectAll(function(data) {
+  burger.selectAll((data) => {
     console.log(data);
     res.render("index", {burgers: data});
   });
 });
 
 router.post("/add", (req, res) => {
-  burger.insertOne(function(data) {
+  console.log(req.body.name);
+  burger.insertOne(req.body.name, (data) => {
     console.log(data);
-    res.render("index", {burgers: data});
+    res.redirect("/");
   });
 });
 
@@ -29,6 +30,7 @@ router.put("/devour/:id", (req, res) => {
     } else {
       res.status(200).end();
     }
+    res.redirect("/");
   });
 });
 module.exports = router;
