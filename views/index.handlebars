@@ -1,12 +1,12 @@
-<h1>Noms!</h1>
+<h1>Krusty Krab</h1>
 
 <h2>Krabby Patties that are not eaten!</h2>
 
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
-  <li>{{id}}. {{burger_name}}</li>
-  <button data-id="{{id}}" class="changeEaten">Devour Krabby Patty</button>
+    <li>{{id}}. {{burger_name}}</li>
+    <button data-id="{{id}}" class="changeEaten btn btn-large waves-effect waves-light red yellow-text">Devour</button>
   {{/unless}}
   {{/each}}
 </ul>
@@ -16,18 +16,19 @@
 <ul>
   {{#each burgers}}
   {{#if devoured}}
-  <li>{{id}}. {{burger_name}}</li>
+    <li>{{id}}. {{burger_name}}</li>
+    <button data-id="{{id}}" class="btn disabled">Devour</button>
   {{/if}}
   {{/each}}
 </ul>
 
-<h2>Create your own Krabby Patty!</h2>
-<form class="create-form">
+<h2>Order a custom Krabby Patty!</h2>
+<form class="create-form col s12">
 
-  <div class="form-group">
+  <div class="form-group input-field container">
     <label for="burg">Name: </label>
     <input type="text" id="burg" name="name">
   </div>
 
-  <button type="submit">Add Krabby Patty</button>
+  <button class="btn btn-large waves-effect waves-light red yellow-text" type="submit">Add Krabby Patty</button>
 </form>

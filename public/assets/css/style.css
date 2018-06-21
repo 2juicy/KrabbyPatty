@@ -1,4 +1,28 @@
+@font-face {
+    font-family: Krabs;
+    src: url(Krabby\ Patty.ttf);
+}
 *{
-  color:white;
-  background: black;
+  margin:0;
+  padding:0;
+  font-family: Krabs;
+}
+h1{
+  background: red;
+  border-radius: 15px;
+  font-weight:bold;
+  text-shadow: 2px 2px yellow;
+}
+h2{
+  font-size: 40px;
+  text-shadow: 2px 2px red;
+}
+li{
+  font-size: 30px;
+}
+.container{
+  border-radius: 25px;
+}
+.input-field{
+  width: 50%;
 }
