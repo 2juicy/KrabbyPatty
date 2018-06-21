@@ -1,5 +1,6 @@
 # Eat the Krabby Patty
 
+Full-stack homework assigment made with the MVC design.
 
 ### Deployed on Heroku!
 https://eatkrabbypatty.herokuapp.com/
@@ -8,4 +9,4 @@ https://eatkrabbypatty.herokuapp.com/
 * [express](https://www.npmjs.com/package/express)
 * [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 * [body-parser](https://www.npmjs.com/package/body-parser)
-* [path](https://www.npmjs.com/package/path)
+* [mysql](https://www.npmjs.com/package/mysql)
