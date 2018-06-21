@@ -12,9 +12,9 @@ router.get("/", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-  console.log(req.body.name);
-  burger.insertOne(req.body.name, (data) => {
+  burger.insertOne(req.body.burger_name, (data) => {
     console.log(data);
+    res.redirect('/');
   });
 });
 

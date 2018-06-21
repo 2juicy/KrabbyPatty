@@ -13,7 +13,7 @@ $(function() {
 
   $(".create-form").on("submit", function(event) {
     event.preventDefault();
-    var newPatty = {
+    const newPatty = {
       burger_name: $("#burg").val().trim(),
       devoured: false
     };
