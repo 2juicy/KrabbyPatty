@@ -5,7 +5,3 @@ INSERT INTO burgers (burger_name) VALUES ('Crying Johnny');
 INSERT INTO burgers (burger_name, devoured) VALUES ('All-Bun Patty', true);
 INSERT INTO burgers (burger_name) VALUES ('Krusty Dog');
 INSERT INTO burgers (burger_name) VALUES ('Flabby Patty');
-
-UPDATE burgers 
-SET devoured = true
-WHERE id = 4;
