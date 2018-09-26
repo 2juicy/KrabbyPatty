@@ -1,6 +1,6 @@
 # Eat the Krabby Patty
 
-Full-stack homework assigment made with the MVC design.
+Full-stack website made with the MVC design.
 
 ### Deployed on Heroku!
 https://eatkrabbypatty.herokuapp.com/
